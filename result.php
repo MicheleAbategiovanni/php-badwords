@@ -14,6 +14,9 @@ $phrases = $_GET["phraseEl"];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Risultato</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -22,15 +25,15 @@ $phrases = $_GET["phraseEl"];
 
 
         <section>
-            <div class="container">
+            <div class="container py-5">
 
-                <div>
-                    <h2>Il paragrafo da te scritto è:</h2>
-                    <p> <?php echo $phrases ?> </p>
+                <div class="py-3">
+                    <h3>Il paragrafo da te scritto è:</h3>
+                    <span> <?php echo $phrases ?> </span>
                 </div>
 
-                <div>
-                    <h4>La lunghezza del paragfrafo è di:</h4>
+                <div class="py-3">
+                    <h4>La lunghezza del paragrafo è di:</h4>
                     <div><?php echo strlen($phrases) ?> </div>
                 </div>
 
@@ -38,8 +41,13 @@ $phrases = $_GET["phraseEl"];
         </section>
 
         <section>
-            <div class="container">
+            <div class="container py-5">
+                <h5>Paragrafo Criptato</h5>
 
+                <div>
+                    <p> <?php echo str_replace("$word", "***", $phrases) ?> </p>
+                    <h6> Lunghezza: <?php echo strlen($phrases) ?> </h6>
+                </div>
             </div>
         </section>
     </main>
